@@ -1,0 +1,31 @@
+{
+  "name": "rateguard",
+  "version": "1.0.0",
+  "description": "RateGuard — Distributed API Rate-Limiting & Traffic Control Platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "node start.js",
+    "build": "npm run build:cpp && npm run build:backend && npm run build:frontend",
+    "build:cpp": "powershell -Command \"Set-Location rate-limiter; & 'C:\\MinGW\\bin\\g++.exe' -std=c++11 -O2 src/engine.cpp -o engine.exe -lws2_32; & 'C:\\MinGW\\bin\\g++.exe' -std=c++11 -O2 tests/test_rate_limiter.cpp -o test_runner.exe -lws2_32\"",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:cpp && npm run test:backend",
+    "test:cpp": "powershell -Command \"Set-Location rate-limiter; .\\test_runner.exe\"",
+    "test:backend": "cd backend && npm test",
+    "load-test": "k6 run load-tests/rateguard.js"
+  },
+  "keywords": [
+    "rate-limiting",
+    "token-bucket",
+    "sliding-window",
+    "c++",
+    "redis",
+    "distributed-systems",
+    "express",
+    "react"
+  ],
+  "author": "RateGuard Team",
+  "license": "MIT"
+}

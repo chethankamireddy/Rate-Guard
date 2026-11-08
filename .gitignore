@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production builds
+dist/
+*/dist/
+
+# Binaries & compiled files
+*.exe
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+rate-limiter/engine.exe
+rate-limiter/test_runner.exe
+rate-limiter/build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.user
